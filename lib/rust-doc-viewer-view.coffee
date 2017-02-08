@@ -22,14 +22,16 @@ class WebEditorView
         try
             lines = fs.readFileSync(cargo).toString().split '\n'
             main_name = ""
+            cargo_name
             for line in lines
                 if line.search /name/ != -1
                     check = line.split ' '
                     if check[0] == "name" and check[1] == "="
-                        main_name = check.pop().replace /"/g, ''
-                        main_name = main_name.replace /-/g, '_'
+                        cargo_name = check.pop().replace /"/g, ''
+                        main_name = cargo_name.replace /-/g, '_'
 
             path = "file://" + atom.project.getPaths()[0] + "/target/doc/" + main_name + "/index.html"
+            console.log(path)
 
         catch error
             atom.notifications.addError "Project is not a Rust project!"
