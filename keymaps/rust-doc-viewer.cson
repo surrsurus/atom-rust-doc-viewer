@@ -1,0 +1,2 @@
+'atom-text-editor[data-grammar~=html]':
+  'alt-shift-d': 'rust-doc-viewer:open'

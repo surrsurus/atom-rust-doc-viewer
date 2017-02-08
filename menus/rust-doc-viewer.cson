@@ -1,0 +1,11 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Web View'
+      'submenu': [
+        { 'label': 'Open documentation', 'command': 'rust-doc-viewer:open' }
+      ]
+    ]
+  }
+]
