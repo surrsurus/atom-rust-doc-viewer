@@ -1,4 +1,4 @@
-# atom-rust-doc-viewer
+# Rust Documentation Viewer
 Atom package for easy viewing of rust documents inside of the text editor
 
 ## How to Use
