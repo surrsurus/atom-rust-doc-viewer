@@ -27,6 +27,7 @@ class WebEditorView
                     check = line.split ' '
                     if check[0] == "name" and check[1] == "="
                         main_name = check.pop().replace /"/g, ''
+                        main_name = main_name.replace /-/g, '_'
 
             path = "file://" + atom.project.getPaths()[0] + "/target/doc/" + main_name + "/index.html"
 
