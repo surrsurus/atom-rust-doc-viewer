@@ -59,14 +59,6 @@ module.exports =
 
     confirm: (event) ->
         pane = atom.workspace.getActivePane()
-        """
-        text = this.getText()
-
-        if pane.activeItem instanceof WebEditorView
-            pane.activeItem.relocate text
-        else
-            atom.notifications.addError "Web View must be the active item."
-        """
 
     reload: (event) ->
         pane = atom.workspace.getActivePane()

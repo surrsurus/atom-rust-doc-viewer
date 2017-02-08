@@ -49,7 +49,7 @@ class WebEditorView
             # Either this means something went terribly wrong or the project is not a rust project
             atom.notifications.addError "Project is not a Rust project!"
             # atom.notifications.addError error
-            atom.notifications.addInfo "Make sure your Rust project root folder is in your Atom tree"
+            atom.notifications.addInfo "Make sure your Rust project root folder is in your Atom tree, and that your docs are compiled"
             return
 
         @relocate path
