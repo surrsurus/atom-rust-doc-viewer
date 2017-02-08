@@ -35,7 +35,7 @@ class WebEditorView
 
         catch error
             atom.notifications.addError "Project is not a Rust project!"
-            atom.notifications.addError error
+            # atom.notifications.addError error
             atom.notifications.addInfo "Make sure your Rust project root folder is in your Atom tree"
             return
 
