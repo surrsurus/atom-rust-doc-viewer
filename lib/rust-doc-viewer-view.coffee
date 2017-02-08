@@ -1,4 +1,5 @@
 {CompositeDisposable} = require 'atom'
+fs = require 'fs'
 
 module.exports =
 class WebEditorView
@@ -10,11 +11,30 @@ class WebEditorView
 
         # Project name
         project_path_arr = atom.project.getPaths()[0].split '/'
-        @project_name = project_path_arr.pop()
+        @project_path_name = project_path_arr.pop()
 
-        path = "file://" + atom.project.getPaths()[0] + "/target/doc/" + @project_name + "/index.html"
+        # Path can't be determined by this. We need to parse Cargo.toml
+        # path = "file://" + atom.project.getPaths()[0] + "/target/doc/" + @project_path_name + "/index.html"
 
-        # atom.notifications.addSuccess path
+        cargo = atom.project.getPaths()[0] + "/Cargo.toml"
+
+        # Synchronous because this is the start of the application
+        try
+            lines = fs.readFileSync(cargo).toString().split '\n'
+            main_name = ""
+            for line in lines
+                if line.search /name/ != -1
+                    check = line.split ' '
+                    if check[0] == "name" and check[1] == "="
+                        main_name = check.pop().replace /"/g, ''
+
+            path = "file://" + atom.project.getPaths()[0] + "/target/doc/" + main_name + "/index.html"
+
+        catch error
+            atom.notifications.addError "Project is not a Rust project!"
+            atom.notifications.addError error
+            atom.notifications.addInfo "Make sure your Rust project root folder is in your Atom tree"
+            return
 
         @relocate path
 
@@ -38,7 +58,7 @@ class WebEditorView
 
     # This is the tab Title and it is required.
     getTitle: () ->
-        return @title || @project_name + " Documentation"
+        return @title || @project_path_name + " Documentation"
 
     # Returns an object that can be retrieved when package is activated
     serialize: ->
