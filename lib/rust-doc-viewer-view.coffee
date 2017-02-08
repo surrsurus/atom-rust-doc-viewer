@@ -16,24 +16,37 @@ class WebEditorView
         # Path can't be determined by this. We need to parse Cargo.toml
         # path = "file://" + atom.project.getPaths()[0] + "/target/doc/" + @project_path_name + "/index.html"
 
+        # First, find the cargo file. This can fail, so we have to verify
+        # the resulting code wont break
         cargo = atom.project.getPaths()[0] + "/Cargo.toml"
 
-        # Synchronous because this is the start of the application
+
         try
+            # Synchronous because this is the start of the application
             lines = fs.readFileSync(cargo).toString().split '\n'
+
+            # Vars for names
             main_name = ""
-            cargo_name
+            cargo_name = ""
+
+            # Iterate over the lines
             for line in lines
+                # See if the line contains the name indentifier
                 if line.search /name/ != -1
+                    # Split the line
                     check = line.split ' '
+                    # Verify that the line starts with `name =`
                     if check[0] == "name" and check[1] == "="
+                        # Retrieve the name, and remove double quotes
                         cargo_name = check.pop().replace /"/g, ''
+                        # Then regex the ``-` to an `_`. It's a weird rust thing
                         main_name = cargo_name.replace /-/g, '_'
 
+            # New path
             path = "file://" + atom.project.getPaths()[0] + "/target/doc/" + main_name + "/index.html"
-            console.log(path)
 
         catch error
+            # Either this means something went terribly wrong or the project is not a rust project
             atom.notifications.addError "Project is not a Rust project!"
             # atom.notifications.addError error
             atom.notifications.addInfo "Make sure your Rust project root folder is in your Atom tree"
@@ -41,7 +54,6 @@ class WebEditorView
 
         @relocate path
 
-        # @relocate 'file:///home/gray/bin/dev/rust/geode/target/doc/geode/index.html'
         @element.setAttribute 'name', 'disable-x-frame-options'
 
         # It is very important to note that this is for development only...
@@ -50,7 +62,6 @@ class WebEditorView
 
         @element.addEventListener 'load', (event) ->
             self.title = this.contentDocument.title
-            # atom.notifications.addSuccess self.title + " has loaded."
 
     relocate: (source) ->
         # if a document model has been established, use it

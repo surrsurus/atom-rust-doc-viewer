@@ -18,7 +18,7 @@ module.exports =
 
         # for the address bar...
         # textEditor = atom.workspace.getActiveTextEditor()
-        ## textEditorElement = atom.views.getView(textEditor)
+        # textEditorElement = atom.views.getView(textEditor)
 
         subscription =
             atom.commands.add 'atom-workspace',
