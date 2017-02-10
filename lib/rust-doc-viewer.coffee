@@ -33,7 +33,7 @@ module.exports =
         @editor = editor = atom.workspace.buildTextEditor()
 
         element = atom.views.getView(editor)
-        element.setAttribute('mini', '')
+        # element.setAttribute('mini', '')
         self = @
 
         element.addEventListener 'keydown', (e) ->
