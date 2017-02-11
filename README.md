@@ -10,4 +10,4 @@ There are still a number of problems that need to be fixed. If you encounter an 
 
 #### Credits
 
-A big thanks to https://github.com/gabceb/atom-web-view for a nice framework for having atom panels with iframes in them. I encourage you to check it out.
+A big thanks to [Atom Web View](https://github.com/gabceb/atom-web-view) for a nice framework for having atom panels with iframes in them. I encourage you to check it out. 
