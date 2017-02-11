@@ -1,5 +1,8 @@
 # Rust Documentation Viewer
-An atom package to make viewing your project's Rust documentation much easier.
+
+![screenshot](https://github.com/surrsurus/atom-rust-doc-viewer/blob/master/media/screenshot.png)
+
+An Atom package to make viewing your project's Rust documentation much easier. This plugin will open up your current Rust project's documentation in a seperate pane so you don't have to have a web browser open at the same time as atom.
 
 ## How to Use
 first, make sure you have your rust project's root folder in atom's tree view. You can add this by right-clicking and selecting `Add Project Folder`. After that you'll need to make sure your docs are built, by running `cargo doc` in your project's root dir. After this, you can open up your project with `alt-shift-D` or by pressing `ctrl-shift-p` and typing in `Rust Doc Viewer open`
