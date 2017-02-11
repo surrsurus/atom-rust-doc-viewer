@@ -1,8 +1,10 @@
-{CompositeDisposable} = require 'atom'
-fs = require 'fs'
+fs                    = require 'fs'
+{CompositeDisposable, Disposable} = require 'atom'
+{$, $$$, ScrollView}  = require 'atom-space-pen-views'
+url                   = require 'url'
 
 module.exports =
-class WebEditorView
+class WebEditorView extends ScrollView
     constructor: (serializedState) ->
         console.log serializedState
 
@@ -19,7 +21,6 @@ class WebEditorView
         # First, find the cargo file. This can fail, so we have to verify
         # the resulting code wont break
         cargo = atom.project.getPaths()[0] + "/Cargo.toml"
-
 
         try
             # Synchronous because this is the start of the application
@@ -62,6 +63,18 @@ class WebEditorView
 
         @element.addEventListener 'load', (event) ->
             self.title = this.contentDocument.title
+
+        # Disable pointer-events while resizing
+        handles = $("atom-pane-resize-handle")
+        handles.on 'mousedown', => @onStartedResize()
+
+    onStartedResize: ->
+      @element.setAttribute 'style', 'pointer-events: none;'
+      @element.addEventListener 'mouseup', @onStoppedResizing.bind this
+
+    onStoppedResizing: ->
+      @element.setAttribute 'style', 'pointer-events: all;'
+      @element.removeEventListener 'mouseup', @onStoppedResizing
 
     relocate: (source) ->
         # if a document model has been established, use it
