@@ -9,5 +9,7 @@
   "engines": {
     "atom": "*"
   },
-  "dependencies": {}
+  "dependencies": {
+    "atom-space-pen-views"
+  }
 }
