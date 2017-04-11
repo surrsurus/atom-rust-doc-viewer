@@ -1,8 +1,6 @@
 # atom clean up work
 {CompositeDisposable} = require 'atom'
 
-url                   = require 'url'
-
 # included modules
 WebEditorView = require './rust-doc-viewer-view'
 
