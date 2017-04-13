@@ -9,6 +9,12 @@
   "engines": {
     "atom": "*"
   },
+  "keywords": [
+    "rust",
+    "documentation",
+    "viewer",
+    "tool"
+  ],
   "dependencies": {
     "atom-space-pen-views": "^2.0.5"
   }
