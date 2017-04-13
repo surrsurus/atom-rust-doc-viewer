@@ -1,6 +1,6 @@
 {
   "name": "rust-doc-viewer",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "View your Rust project docs right inside of Atom",
   "main": "./lib/rust-doc-viewer",
   "repository": "https://github.com/surrsurus/atom-rust-doc-viewer",
