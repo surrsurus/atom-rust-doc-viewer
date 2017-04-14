@@ -13,7 +13,8 @@
     "rust",
     "documentation",
     "viewer",
-    "tool"
+    "tool",
+    "productivity"
   ],
   "dependencies": {
     "atom-space-pen-views": "^2.0.5"
