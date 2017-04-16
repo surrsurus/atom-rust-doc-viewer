@@ -1,5 +1,7 @@
 # Rust Documentation Viewer
 
+View your Rust project docs right inside of Atom.
+
 [![apm](https://raw.githubusercontent.com/surrsurus/atom-rust-doc-viewer/master/media/screenshot.png)](https://atom.io/packages/rust-doc-viewer)
 
 An Atom package to make viewing your project's Rust documentation much easier. This plugin will open up your current Rust project's documentation in a seperate pane so you don't have to have a web browser open at the same time as atom.
