@@ -9,16 +9,10 @@ first, make sure you have your rust project's root folder in atom's tree view. Y
 
 Note that these will open up your own rust docs, which is useful if you are using a project framework such as amethyst, or tcod-rs. This is still in development, and feedback is appreciated.
 
-There are still a number of problems that need to be fixed. If you encounter an issue, please let me know.
-
 ## Installation
 
 You can install the package directly from your atom text editor by searching for `rust-doc-viewer` in packages. You can also install it from the commandline using `apm install rust-doc-viewer`.
 
-### License 
-
-This software is licensed under the MIT License. Read more about it [here](https://github.com/surrsurus/atom-rust-doc-viewer/blob/master/LICENSE).
-
-### Acknowledgements
+## Acknowledgements
 
 A big thanks to [Atom Web View](https://github.com/gabceb/atom-web-view) for a nice framework for having atom panels with iframes in them. I encourage you to check it out.
