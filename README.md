@@ -1,6 +1,6 @@
 # Rust Documentation Viewer
 
-<img src="https://raw.githubusercontent.com/surrsurus/atom-rust-doc-viewer/master/media/screenshot.png" width="700">
+[![apm](https://raw.githubusercontent.com/surrsurus/atom-rust-doc-viewer/master/media/screenshot.png)](https://atom.io/packages/rust-doc-viewer)
 
 An Atom package to make viewing your project's Rust documentation much easier. This plugin will open up your current Rust project's documentation in a seperate pane so you don't have to have a web browser open at the same time as atom.
 
@@ -16,8 +16,6 @@ There are still a number of problems that need to be fixed. If you encounter an 
 You can install the package directly from your atom text editor by searching for `rust-doc-viewer` in packages. You can also install it from the commandline using `apm install rust-doc-viewer`.
 
 ### License 
-
-<img src="https://ag01research.files.wordpress.com/2013/10/20090915152417-1.jpg" width="100">
 
 This software is licensed under the MIT License. Read more about it [here](https://github.com/surrsurus/atom-rust-doc-viewer/blob/master/LICENSE).
 
