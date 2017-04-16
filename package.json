@@ -1,9 +1,12 @@
 {
   "name": "rust-doc-viewer",
-  "version": "2.6.1",
+  "version": "2.6.2",
   "description": "View your Rust project docs right inside of Atom",
   "main": "./lib/rust-doc-viewer",
-  "repository": "https://github.com/surrsurus/atom-rust-doc-viewer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/surrsurus/atom-rust-doc-viewer"
+  },
   "license": "MIT",
   "readme": "README.md",
   "engines": {
@@ -20,10 +23,6 @@
     "atom-space-pen-views": "^2.0.5"
   },
   "homepage": "https://github.com/surrsurus/atom-rust-doc-viewer",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/surrsurus/atom-rust-doc-viewer"
-  },
   "bugs": {
     "url": "https://github.com/surrsurus/atom-rust-doc-viewer/issues"
   }
