@@ -1,5 +1,7 @@
 # Rust Documentation Viewer
 
+No longer actively maintained.
+
 View your Rust project docs right inside of Atom.
 
 [![apm](https://raw.githubusercontent.com/surrsurus/atom-rust-doc-viewer/master/media/screenshot.png)](https://atom.io/packages/rust-doc-viewer)
